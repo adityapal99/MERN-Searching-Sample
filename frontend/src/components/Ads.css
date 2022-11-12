@@ -1,0 +1,176 @@
+/* Arrange the ads in a grid */
+.ads-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+@import "https://unpkg.com/open-props";
+
+:root {
+  --transition: 250ms ease-in-out;
+  --brand: var(--blue-8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-3);
+}
+
+:focus {
+  outline: 2px dashed var(--red-7);
+  outline-offset: 0.2em;
+}
+
+
+.card {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+
+
+    background-color: var(--gray-0);
+    box-shadow: var(--shadow-2);
+    border-radius: var(--radius-2);
+
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+}
+
+.card:hover, .card:focus-within {
+    z-index: 100;
+    transform: scale3d(1.1, 1.1, 1.1);
+    box-shadow: var(--shadow-3);
+}
+
+.card__img-container {
+  width: 100%;
+  aspect-ratio: var(--ratio-widescreen);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.card__img {
+  object-fit: cover;
+}
+
+
+
+.card__body {
+  padding: var(--size-4) var(--size-5);
+  display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card__title {
+  font-size: var(--font-size-4);
+  text-transform: capitalize;
+  color: var(--gray-9);
+}
+
+.card__date {
+  font-size: var(--font-size-1);
+  color: var(--gray-7);
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-fluid-1);
+}
+
+.card__tag {
+  padding: var(--size-1) var(--size-2);
+  background-color: var(--gray-8);
+  color: var(--gray-2);
+
+  font-family: var(--font-mono);
+  font-size: var(--font-size-0);
+  text-transform: uppercase;
+  letter-spacing: var(--font-letterspacing-2);
+  text-decoration: none;
+
+  border-radius: var(--radius-1);
+  transition: var(--transition);
+  transition-property: background-color;
+}
+
+.card__tag:is(:hover, :focus) {
+  background-color: var(--brand);
+}
+
+.card__cta {
+  text-decoration: none;
+  color: var(--gray-8);
+  width: 100%;
+  font-size: var(--font-size-2);
+  transition: var(--transition);
+  transition-property: color;
+}
+
+.card__cta::before,
+.card__cta::after {
+  transition: var(--transition);
+  transition-property: transform;
+}
+
+
+.card__cta::after {
+  content: " →";
+  display: inline-block;
+  margin-left: var(--size-1);
+}
+
+.card__cta:hover {
+  color: var(--brand);
+}
+
+
+.card__cta:hover::after {
+  transform: translateX(50%);
+}
+
+.card__cta {
+    /* flex: 1; */
+    margin-top: auto;
+    margin-bottom: 1rem;
+    justify-self: end;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}

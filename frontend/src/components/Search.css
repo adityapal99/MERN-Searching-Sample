@@ -1,0 +1,25 @@
+.form-group {
+    display: flex;
+}
+
+.form-control {
+    font-size: medium;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0rem 1rem 0;
+    border: none;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.btn {
+    font-size: medium;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0rem 1rem 0;
+    border: none;
+    cursor: pointer;
+    background-color: #dae2f0;
+}
